@@ -1,0 +1,10 @@
+<div>
+    <p>
+        <label>CPF</label>
+        <br *ngIf="breakLineOnInput">
+
+        <input type={{inputType}} [style]=inputStyle [(ngModel)]="inputText" (change)="cpfChanged()"
+        (click)="cpfClick()">
+    </p>
+
+</div>

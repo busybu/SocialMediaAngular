@@ -1,0 +1,27 @@
+<h1>
+    Login
+</h1>
+
+
+<div class="example-container">
+    <mat-form-field>
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+<app-password [seePassword]="false" [breakLineOnInput]="true" (valueChanged)="passwordChanged($event)" />
+
+<p>
+    <button mat-raised-button color="primary" (click)="login()">Logar</button>
+</p>
+
+<p>
+    Não possui conta? <a routerLink="newaccount">Crie uma agora mesmo!</a>
+</p>
+
+<p>
+    Esqueceu sua senha? <a href="{{'/recover/' + email}}">Recupere agora!</a>
+</p>
+
+<router-outlet></router-outlet>
